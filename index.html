@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Servicio Técnico de Celulares</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family: 'Poppins', sans-serif;
+margin:0;
+background:#eaf2ff;
+}
+
+header{
+background-image:url("banner-fixmovil.png");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:120px 20px;
+position:relative;
+animation: moverBanner 15s infinite alternate;
+}
+
+@keyframes moverBanner{
+0%{background-position:center 20%;}
+100%{background-position:center 35%;}
+}
+
+header::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+header h1,
+header h2,
+header p,
+header .boton{
+position:relative;
+z-index:2;
+}
+
+header h1{
+margin:0;
+font-size:42px;
+font-weight:700;
+letter-spacing:1px;
+text-shadow:0 4px 14px rgba(0,0,0,0.9);
+}
+
+.boton{
+display:inline-block;
+background:#25D366;
+color:white;
+padding:14px 25px;
+margin-top:20px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.boton:hover{
+background:#1d4ed8;
+transform:scale(1.05);
+}
+
+section{
+padding:40px;
+text-align:center;
+}
+
+.servicios{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.tarjeta{
+background:white;
+padding:25px;
+width:220px;
+border-radius:12px;
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+border-top:4px solid #2563eb;
+transition:0.3s;
+}
+
+.tarjeta h3{
+font-size:22px;
+}
+
+.tarjeta:hover{
+transform:scale(1.08);
+box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+.tarjeta p{
+color:#374151;
+font-size:15px;
+}
+.contacto{
+background:#dbeafe;
+}
+
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+header h2{
+font-size:48px;
+letter-spacing:4px;
+font-weight:700;
+margin-top:10px;
+text-shadow:0 4px 12px rgba(0,0,0,0.9);
+}
+
+header p{
+font-size:18px;
+margin-top:10px;
+}
+
+.servicio{
+  width:280px;
+  height:190px;
+  border-radius:15px;
+  padding:20px;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  transition:0.3s;
+}
+
+.servicio::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+border-radius:15px;
+z-index:1;
+}
+
+.servicio:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,0.35);
+}
+
+.servicio:hover::before{
+background:rgba(0,0,0,0.25);
+}
+
+.servicio h3{
+position:relative;
+z-index:2;
+color:#ffffff;
+font-size:24px;
+font-weight:800;
+letter-spacing:1px;
+margin-bottom:6px;
+text-shadow:0 4px 14px rgba(0,0,0,1);
+}
+
+.servicio h3,
+.servicio p{
+position:relative;
+z-index:2;
+color:#ffffff !important;
+font-weight:800;
+text-shadow:
+0 0 10px rgba(255,255,255,1),
+0 4px 18px rgba(0,0,0,1.2);
+}
+
+.pantalla{
+background-image:url("reparacion-pantalla.jpg");
+}
+
+.pantalla::before{
+background:rgba(0,0,0,0.35);
+}
+
+.bateria{
+background-image:url("bateria-celular.jpg");
+background-size:cover;
+filter:brightness(0.9);
+}
+
+.carga{
+background-image:url("pin-carga.jpg");
+}
+
+
+.software{
+background-image:url("software-celular.jpg");
+background-size:100% 120%;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.camara{
+background-image:url("camara-celular.jpg");
+background-size:cover;
+filter:brightness(0.9);
+}
+
+.audio{
+background-image:url("audio-celular.jpg");
+}
+
+.tapa{
+background-image:url("tapa-trasera.jpg");
+background-size:cover;
+filter:brightness(0.85);
+}
+
+.marco{
+background-image:url("marco-celular.jpg");
+background-size:cover;
+filter:brightness(0.85);
+}
+
+.placa{
+background-image:url("placa-logica.jpg");
+background-size:cover;
+filter:brightness(0.8);
+}
+
+section h2{
+font-size:32px;
+font-weight:700;
+}
+
+.marcas{
+background:white;
+padding:60px 20px;
+text-align:center;
+}
+
+.logos-marcas{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin:30px 0;
+}
+
+.logos-marcas img{
+width:120px;
+height:60px;
+object-fit:contain;
+background:none;
+border:none;
+box-shadow:none;
+opacity:0.9;
+transition:0.3s;
+}
+
+.logos-marcas img:hover{
+opacity:1;
+transform:scale(1.1);
+}
+
+
+.servicio{
+opacity:0;
+transform:translateY(30px);
+animation: aparecer 0.8s forwards;
+}
+
+.servicio:nth-child(1){animation-delay:0.1s;}
+.servicio:nth-child(2){animation-delay:0.2s;}
+.servicio:nth-child(3){animation-delay:0.3s;}
+.servicio:nth-child(4){animation-delay:0.4s;}
+.servicio:nth-child(5){animation-delay:0.5s;}
+.servicio:nth-child(6){animation-delay:0.6s;}
+.servicio:nth-child(7){animation-delay:0.7s;}
+.servicio:nth-child(8){animation-delay:0.8s;}
+.servicio:nth-child(9){animation-delay:0.9s;}
+
+@keyframes aparecer{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.logo{
+height:140px;
+margin-right:20px;
+filter:drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+.menu{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:white;
+padding:10px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.menu a{
+text-decoration:none;
+color:#1f2937;
+font-weight:600;
+font-size:16px;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#2563eb;
+transform:scale(1.05);
+}
+
+.menu-whatsapp{
+background:#25D366;
+color:white !important;
+padding:8px 16px;
+border-radius:8px;
+font-weight:600;
+transition:0.3s;
+}
+
+.menu-whatsapp:hover{
+background:#1ebe5d;
+transform:scale(1.05);
+}
+
+.marcas-carrusel{
+overflow:hidden;
+width:100%;
+margin-top:30px;
+}
+
+.marcas-track{
+display:flex;
+gap:60px;
+width:max-content;
+animation:moverMarcas 20s linear infinite;
+}
+
+.marcas-track img{
+height:60px;
+width:auto;
+object-fit:contain;
+opacity:0.9;
+}
+
+@keyframes moverMarcas{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
+
+.menu-links{
+display:flex;
+align-items:center;
+gap:30px;
+}
+
+.resenas{
+background:#f8fafc;
+padding:60px 20px;
+text-align:center;
+}
+
+.resenas-contenedor{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+}
+
+.resena{
+background:white;
+padding:25px;
+width:260px;
+border-radius:12px;
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+font-size:15px;
+}
+
+.resena strong{
+display:block;
+margin-top:10px;
+color:#2563eb;
+}
+
+#formulario{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:340px;
+
+max-height:80vh;
+overflow:auto;
+
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+color:white;
+border-radius:18px;
+padding:30px;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+z-index:2000;
+}
+
+#formulario input,
+#formulario select,
+#formulario textarea{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:none;
+margin-top:5px;
+font-family:'Poppins',sans-serif;
+}
+
+#formulario textarea{
+height:70px;
+resize:none;
+}
+
+#formulario button{
+background:#25D366;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+color:white;
+font-weight:bold;
+margin-top:10px;
+cursor:pointer;
+}
+
+#formulario button:hover{
+background:#1ebe5d;
+}
+
+#fondo-formulario{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background-image:url("fondo-reparaciones.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+z-index:1500;
+}
+
+#fondo-formulario::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+@keyframes fondoOndas{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="menu">
+
+<img src="logo.png" class="logo">
+
+<div class="menu-links">
+<a href="#">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#marcas">Marcas</a>
+<a href="#contacto">Contacto</a>
+<a href="https://wa.me/5491127041994" class="menu-whatsapp">WhatsApp</a>
+</div>
+
+</nav>
+
+
+<header>
+
+<h1>Servicio Técnico Especializado en Celulares</h1>
+
+<h2>FIXMOVIL</h2>
+
+<p>Diagnóstico y presupuesto sin cargo</p>
+
+<p>✔ Reparaciones en 48 hs o Express </p>
+<p>✔ Repuestos originales o de calidad </p>
+<p>✔ Garantía en reparaciones</p>
+
+
+<a class="boton" href="https://wa.me/5491127041994">
+Consultar por WhatsApp
+</a>
+
+</header>
+
+
+<section>
+
+<hr>
+
+<section id="servicios">
+
+<div style="width:80px;height:4px;background:#2563eb;margin:10px auto 30px;border-radius:10px;"></div>
+
+<div class="servicios">
+
+<div class="servicio pantalla" onclick="abrirFormulario()">
+  <h3>📱 Reparación de Pantallas</h3>
+  <p>Cambio de módulo y vidrio</p>
+</div>
+
+
+<div class="servicio bateria" onclick="abrirFormulario()">
+<h3>🔋 Cambio de Batería</h3>
+<p>Reemplazo de batería.</p>
+</div>
+
+
+<div class="servicio carga" onclick="abrirFormulario()">
+<h3>🔌 Pin de carga</h3>
+<p>Reparación del conector.</p>
+</div>
+
+<div class="servicio software" onclick="abrirFormulario()">
+<h3>⚙️ Software</h3>
+<p>Flasheo y desbloqueos.</p>
+</div>
+
+<div class="servicio camara" onclick="abrirFormulario()">
+<h3>📷 Cámaras</h3>
+<p>Reparación o cambio.</p>
+</div>
+
+<div class="servicio audio" onclick="abrirFormulario()">
+<h3>🔊 Audio</h3>
+<p>Parlantes y micrófonos.</p>
+</div>
+
+<div class="servicio tapa" onclick="abrirFormulario()">
+<h3>🔧 Tapa trasera</h3>
+<p>Reparación o reemplazo.</p>
+</div>
+
+<div class="servicio marco" onclick="abrirFormulario()">
+<h3>🧱 Cambio de marco</h3>
+<p>Reparación de estructura.</p>
+</div>
+
+<div class="servicio placa" onclick="abrirFormulario()">
+<h3>🧠 Placa lógica</h3>
+<p>Diagnóstico y reparación.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>¿Por qué elegir FIXMOVIL?</h2>
+
+<p>✔ Diagnóstico profesional</p>
+
+<p>✔ Repuestos de calidad</p>
+
+<p>✔ Reparaciones cuidadosas</p>
+
+<p>✔ Atención personalizada</p>
+
+
+</section>
+
+<section class="marcas" id="marcas">
+
+<h2>Marcas que reparamos</h2>
+
+<div class="marcas-carrusel">
+
+<div class="marcas-track">
+
+<img src="apple.png">
+<img src="samsung.png">
+<img src="xiaomi.png">
+<img src="motorola.png">
+<img src="huawei.png">
+<img src="lg.png">
+<img src="nokia.png">
+
+<img src="apple.png">
+<img src="samsung.png">
+<img src="xiaomi.png">
+<img src="motorola.png">
+<img src="huawei.png">
+<img src="lg.png">
+<img src="nokia.png">
+
+</div>
+
+</div>
+
+<p>
+Apple • Samsung • Xiaomi • Motorola • Huawei • LG • Nokia
+</p>
+
+</section>
+
+<section class="resenas">
+
+<h2>Opiniones de clientes</h2>
+
+<h3>Deja tu reseña</h3>
+
+<input id="nombre" placeholder="Tu nombre"><br><br>
+<textarea id="comentario" placeholder="Escribe tu opinión"></textarea><br><br>
+
+<p>Calificación:</p>
+
+<select id="estrellas">
+<option value="5">⭐⭐⭐⭐⭐</option>
+<option value="4">⭐⭐⭐⭐</option>
+<option value="3">⭐⭐⭐</option>
+<option value="2">⭐⭐</option>
+<option value="1">⭐</option>
+</select>
+
+<br><br>
+<button onclick="guardarResena()">Enviar reseña</button>
+
+<div class="resenas-contenedor">
+
+<div class="resena">
+⭐⭐⭐⭐⭐
+<p>Excelente atención. Cambiaron la pantalla de mi celular y quedó perfecto.</p>
+<strong>- María</strong>
+</div>
+
+<div class="resena">
+⭐⭐⭐⭐⭐
+<p>Muy recomendable. Repararon el pin de carga en el mismo día.</p>
+<strong>- Juan</strong>
+</div>
+
+<div class="resena">
+⭐⭐⭐⭐⭐
+<p>Buen precio y atención. Volvería sin dudas.</p>
+<strong>- Laura</strong>
+</div>
+
+</div>
+
+</section>
+
+<section class="contacto" id="contacto">
+
+
+<h3>Ubicación</h3>
+
+<p>Cuba 9675</p>
+<p>Loma Hermosa - Tres de Febrero</p>
+<p>Buenos Aires</p>
+
+<iframe 
+src="https://www.google.com/maps?q=Cuba+9675+Loma+Hermosa+Buenos+Aires&output=embed"
+width="100%" 
+height="300"
+style="border:0; border-radius:10px;"
+loading="lazy">
+</iframe>
+
+<h2>Solicitar presupuesto</h2>
+
+<p>
+Los presupuestos se informan al momento de la consulta
+debido a la variación constante en los precios de repuestos.
+</p>
+
+<p>
+Enviá por WhatsApp la marca, modelo y problema del equipo.
+</p>
+
+<a class="boton" href="https://wa.me/5491127041994">
+Enviar consulta
+</a>
+
+</section>
+
+
+<footer>
+
+<p>Servicio Técnico de Celulares</p>
+
+<p>Consultas por WhatsApp</p>
+
+</footer>
+
+<a href="https://wa.me/5491127041994" class="whatsapp-float">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+</a>
+
+<style>
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:28px;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+@keyframes latido{
+0%{transform:scale(1);}
+50%{transform:scale(1.12);}
+100%{transform:scale(1);}
+}
+
+.whatsapp-float{
+animation:latido 1.8s infinite;
+}
+
+</style>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBU2N58-SXE7LWoKkPUOxJEt66qq9Z5hzc",
+    authDomain: "resenasnegocio.firebaseapp.com",
+    projectId: "resenasnegocio",
+    storageBucket: "resenasnegocio.firebasestorage.app",
+    messagingSenderId: "289300221236",
+    appId: "1:289300221236:web:009450d687ce0409a2a961",
+    measurementId: "G-3GZ1FCBDH8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+window.guardarResena = async function() {
+
+const nombre = document.getElementById("nombre").value;
+const comentario = document.getElementById("comentario").value;
+
+if(nombre === "" || comentario === ""){
+alert("Por favor completa todos los campos");
+return;
+}
+
+if(comentario.length < 10){
+alert("La reseña debe tener al menos 10 caracteres");
+return;
+}
+
+const estrellas = document.getElementById("estrellas").value;
+
+try {
+await addDoc(collection(db, "resenas"), {
+nombre: nombre,
+comentario: comentario,
+estrellas: estrellas
+});
+
+alert("Reseña enviada correctamente");
+
+document.getElementById("nombre").value = "";
+document.getElementById("comentario").value = "";
+document.getElementById("estrellas").value = "5";
+
+} catch (e) {
+console.error("Error al guardar", e);
+}
+
+} 
+ function cargarResenas() {
+
+const contenedor = document.querySelector(".resenas-contenedor");
+
+onSnapshot(collection(db, "resenas"), (snapshot) => {
+
+contenedor.innerHTML = "";
+
+snapshot.forEach((doc) => {
+
+const data = doc.data();
+
+const div = document.createElement("div");
+div.classList.add("resena");
+
+div.innerHTML = `
+<p>${"⭐".repeat(data.estrellas)}</p>
+<p>${data.comentario}</p>
+<strong>- ${data.nombre}</strong>
+`;
+
+contenedor.appendChild(div);
+
+});
+
+});
+
+}
+
+cargarResenas();
+
+</script>
+
+<div id="fondo-formulario" onclick="cerrarFormulario()"></div>
+
+<div id="formulario" class="formulario-popup">
+
+<div style="text-align:right">
+<button onclick="cerrarFormulario()" style="background:red;border:none;color:white;padding:5px 10px;border-radius:6px;cursor:pointer">✖</button>
+</div>
+
+<p>Marca</p>
+<select id="marca">
+<option>Samsung</option>
+<option>Motorola</option>
+<option>Xiaomi</option>
+<option>iPhone</option>
+<option>Huawei</option>
+<option>LG</option>
+<option>Nokia</option>
+<option>Oppo</option>
+<option>Realme</option>
+<option>ZTE</option>
+<option>TCL</option>
+<option>Alcatel</option>
+<option>Google Pixel</option>
+<option>Otra marca</option>
+</select>
+<br><br>
+
+<p>Modelo</p>
+<input id="modelo" placeholder="Ej: Samsung A32">
+
+<br><br>
+
+<p>¿El teléfono prende?</p>
+
+<select id="prende">
+<option>Sí prende</option>
+<option>No prende</option>
+<option>Prende pero no da imagen</option>
+<option>Se reinicia solo</option>
+</select>
+
+<br><br>
+
+<p>Problema</p>
+<select id="problema">
+<option>Pantalla rota</option>
+<option>No prende</option>
+<option>No carga</option>
+<option>Se mojó</option>
+<option>No funciona el táctil</option>
+<option>Otro problema</option>
+</select>
+
+<br><br>
+
+<textarea id="explicacion" placeholder="Explica el problema"></textarea>
+
+<br><br>
+
+<button onclick="enviarWhatsApp()">Enviar</button>
+<button onclick="cerrarFormulario()">Cerrar</button>
+
+</div>
+
+<script>
+
+function abrirFormulario(){
+
+document.getElementById("fondo-formulario").style.display="block";
+
+const f = document.getElementById("formulario");
+
+f.style.display="block";
+f.style.opacity="0";
+f.style.transform="translate(-50%,-60%)";
+
+setTimeout(()=>{
+f.style.transition="0.3s";
+f.style.opacity="1";
+f.style.transform="translate(-50%,-50%)";
+},50);
+
+}
+
+function cerrarFormulario(){
+
+document.getElementById("formulario").style.display="none";
+document.getElementById("fondo-formulario").style.display="none";
+
+}
+
+function enviarWhatsApp(){
+
+var marca=document.getElementById("marca").value;
+var modelo=document.getElementById("modelo").value;
+var prende=document.getElementById("prende").value;
+var problema=document.getElementById("problema").value;
+var explicacion=document.getElementById("explicacion").value;
+
+var mensaje="Hola quiero consultar %0A"+
+"Marca: "+marca+"%0A"+
+"Modelo: "+modelo+"%0A"+
+"Prende: "+prende+"%0A"+
+"Problema: "+problema+"%0A"+
+"Detalle: "+explicacion;
+
+var url="https://wa.me/5491127041994?text="+mensaje;
+
+window.open(url,"_blank");
+
+}
+
+document.getElementById("modelo").value="";
+document.getElementById("explicacion").value="";
+
+
+
+</script>
+
+</body>
+</html>
